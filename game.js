@@ -44,7 +44,7 @@ function moveRect(dirKey) {
     }
 
     function moveHorizontally() {
-        if (0 <= currentPosX - 1 && dirKey == "a" || currentPosX + 1 < width / 16 && dirKey == "d") {
+        if (0 < currentPosX && dirKey == "a" || currentPosX + 1 < width / 16 && dirKey == "d") {
             ctx.clearRect(currentPosX * 16, currentPosY * 16, 16, 16);
             ctx.fillRect(nextPos * 16, currentPosY * 16, 16, 16);
             currentPosX = nextPos;
@@ -52,7 +52,7 @@ function moveRect(dirKey) {
     }
 
     function moveVertically() {
-        if (0 <= currentPosY - 1 && dirKey == "w" || currentPosY + 1 < height / 16 && dirKey == "s") {
+        if (0 < currentPosY && dirKey == "w" || currentPosY + 1 < height / 16 && dirKey == "s") {
             ctx.clearRect(currentPosX * 16, currentPosY * 16, 16, 16);
             ctx.fillRect(currentPosX * 16, nextPos * 16, 16, 16);
             currentPosY = nextPos;
